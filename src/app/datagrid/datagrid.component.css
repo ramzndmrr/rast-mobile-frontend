@@ -1,0 +1,39 @@
+
+.btnSend {
+  border-radius: 35px;
+  background-color: #744BFC;
+  border: none;
+  color: #FFFFFF;
+}
+#ekleBtn{
+  background-color: #744BFC;
+  width: 250px;
+  border-radius: 25px;
+  color: #EFF2FF;
+}
+
+.btnDecline {
+  border-radius: 35px;
+  background-color: #F5F7FF;
+  border: none;
+  color: #744BFC;
+}
+
+.socialMediaHead{
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+::ng-deep .dx-datagrid-rowsview .dx-datagrid-content:not(.dx-datagrid-content-fixed) tr:nth-child(even) {
+  background-color: #EFF2FF;
+}
+
+::ng-deep .dx-datagrid-rowsview .dx-datagrid-content:not(.dx-datagrid-content-fixed) tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+::ng-deep .dx-page-size{
+  background-color: #744BFC;
+  color: white;
+
+}

@@ -1,0 +1,79 @@
+<dx-popup class="container"
+    [(visible)]="isPopupVisible"
+    [height]="400"
+    [width]="500"
+    [hideOnOutsideClick]="true"
+    >
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="socialMediaAddForm">
+          <div class="form-group mx-4">
+            <label for="socialMediaLink"><strong class="socialMediaHead" style="font-size: 13px;">Sosyal Medya Linki</strong></label>
+            <input formControlName="socialMediaLink" style="border-radius: 38px;" type="email" class="form-control mt-1" id="socialMediaLink">
+          </div>
+          <div class="form-group mx-4 ">
+            <label class="mt-3" for="socialMediaName"><strong class="socialMediaHead" style="font-size: 13px;">Sosyal Medya Adı</strong></label>
+            <input formControlName="socialMediaName"  style="border-radius: 38px;" type="email" class="form-control mt-1" id="socialMediaName"socialMediaName>
+          </div>
+          <div class="form-group mx-4">
+            <label class="mt-3" for="socialMediaDesc"><strong class="socialMediaHead" style="font-size: 13px;">Açıklama</strong></label>
+            <input formControlName="socialMediaDesc" style="border-radius: 38px;"  type="email" class="form-control mt-1" id="socialMediDesc" >
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col">
+        </div>
+        <div class="col mt-4">
+          <button  type="button" class="btn btn-primary mx-3 btnDecline" (click)="cancel()">Vazgeç</button>
+          <button (click)="addMeeting()" type="button" class="btn btn-primary btnSend">Kaydet</button>
+        </div>
+      </div>
+      </div>
+
+</dx-popup>
+  <dx-data-grid
+  [dataSource]="social()"
+  [allowColumnReordering]="false"
+  [columnAutoWidth]="true"
+  id="gridContainer"
+  style="padding: 40px; background-color:#EFF2FF"
+>
+
+<dxi-column class="deneme" dataField="socialMediaLink" caption="Sosyal Medya Linki"><dxi-validation-rule type="required" ></dxi-validation-rule></dxi-column>
+<dxi-column dataField="socialMediaName" caption="Sosyal Medya Adı"></dxi-column>
+<dxi-column dataField="socialMediaDesc" dataType="date" caption="Açıklama"> </dxi-column>
+
+
+
+  <dxo-toolbar>
+    <dxi-item location="before">
+      <div *dxTemplate class="informer">
+        <dx-button
+          text="Yeni Hesap Ekle"
+          [width]="180"
+          id="ekleBtn"
+          icon="add"
+          (onClick)="togglePopup()">
+      </dx-button>
+      </div>
+    </dxi-item>
+    <dxi-item>
+  </dxi-item>
+    <dxi-item id="searchPanel" name="searchPanel" [width]="500"></dxi-item>
+    <dxi-item name="addRowButton" showText="always"></dxi-item>
+</dxo-toolbar>
+
+<dxo-search-panel [visible]="true" placeholder="Search Objects..."></dxo-search-panel>
+
+
+
+
+
+  <!-- burdan sonrası sayfalama için -->
+  <dxo-paging [pageSize]="12"></dxo-paging>
+  <dxo-pager
+    [showPageSizeSelector]="true"
+    [allowedPageSizes]="allowedPageSizes"
+  ></dxo-pager>
+</dx-data-grid>

@@ -1,0 +1,13 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.icons {
+  background-color: #744bfc;
+  color: aliceblue;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 6px;
+}
